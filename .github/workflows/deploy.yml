@@ -1,5 +1,4 @@
-# .github/workflows/deploy.yml
-name: Deploy Nuxt 3 to GitHub Pages
+name: Deploy Nuxt 3 App to GitHub Pages
 
 on:
   push:
@@ -16,22 +15,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd app
+          npm install
 
-      - name: Build Nuxt site
-        run: npm run build
+      - name: Build project
+        run: |
+          cd app
+          npm run build
 
       - name: Generate static site
-        run: npm run generate
+        run: |
+          cd app
+          npm run generate
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .output/public
+          publish_dir: app/.output/public
