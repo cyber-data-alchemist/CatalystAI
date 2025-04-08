@@ -1,0 +1,22 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "NUXT_APP_BASE_URL=$NUXT_APP_BASE_URL nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "nuxt": "^3.9.0",
+    "vite-plugin-vuetify": "^2.1.1",
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.5",
+    "vuetify": "^3.8.1"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47"
+  }
+}
