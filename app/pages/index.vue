@@ -14,7 +14,7 @@
              variant="elevated"
              prepend-icon="mdi-flask-outline"
            >
-             Transmute!
+             Shine Shine!
            </v-btn>
         </v-container>
   
